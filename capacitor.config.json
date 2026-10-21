@@ -1,0 +1,12 @@
+{
+  "appId": "com.pocketappstudio.sopcheck",
+  "appName": "SOPCheck",
+  "webDir": "www",
+  "ios": { "contentInset": "automatic", "backgroundColor": "#f1f5f9" },
+  "android": { "backgroundColor": "#f1f5f9" },
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 1200, "backgroundColor": "#f1f5f9", "showSpinner": false },
+    "StatusBar": { "style": "LIGHT", "backgroundColor": "#f1f5f9" },
+    "PushNotifications": { "presentationOptions": ["badge", "sound", "alert"] }
+  }
+}

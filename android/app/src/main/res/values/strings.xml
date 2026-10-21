@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SOPCheck</string>
+    <string name="title_activity_main">SOPCheck</string>
+    <string name="package_name">com.pocketappstudio.sopcheck</string>
+    <string name="custom_url_scheme">com.pocketappstudio.sopcheck</string>
+</resources>

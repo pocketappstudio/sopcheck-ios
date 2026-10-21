@@ -1,0 +1,29 @@
+{
+  "name": "sopcheck-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SOPCheck iOS/Android app (Capacitor) wrapping the static SOPCheck build with native camera scan, haptics, offline bundle and push-ready plumbing.",
+  "scripts": {
+    "build:www": "bash scripts/build-www.sh",
+    "assets": "npx capacitor-assets generate --iconBackgroundColor '#14b8a6' --splashBackgroundColor '#f1f5f9' --splashBackgroundColorDark '#0f172a'",
+    "sync": "npm run build:www && npx cap sync",
+    "android:debug": "npm run sync && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.0",
+    "@capacitor/camera": "^7.0.1",
+    "@capacitor/cli": "^7.4.0",
+    "@capacitor/core": "^7.4.0",
+    "@capacitor/haptics": "^7.0.1",
+    "@capacitor/ios": "^7.4.0",
+    "@capacitor/network": "^7.0.1",
+    "@capacitor/push-notifications": "^7.0.1",
+    "@capacitor/splash-screen": "^7.0.1",
+    "@capacitor/status-bar": "^7.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "tesseract.js": "^5.1.1",
+    "tesseract.js-core": "^5.1.1"
+  }
+}
