@@ -16,7 +16,7 @@ platform :ios do
     import_certificate(certificate_path: "/tmp/dist.p12", certificate_password: ENV["DIST_CERT_PASSWORD"], keychain_name: "fastlane_tmp_keychain", keychain_password: "")
     sigh(api_key: api_key, app_identifier: id, team_id: team, force: true, filename: "#{id}.mobileprovision")
     profile = lane_context[SharedValues::SIGH_NAME]
-    increment_build_number(xcodeproj: "ios/App/App.xcodeproj", build_number: (ENV["GITHUB_RUN_NUMBER"].to_i + 10).to_s  # +10: builds 1-4 were used by the old sopcheck-mobile repo)
+    increment_build_number(xcodeproj: "ios/App/App.xcodeproj", build_number: (ENV["GITHUB_RUN_NUMBER"].to_i + 10).to_s)  # +10: builds 1-4 were used by the old sopcheck-mobile repo
     update_code_signing_settings(use_automatic_signing: false, path: "ios/App/App.xcodeproj", targets: ["App"], team_id: team,
       code_sign_identity: "Apple Distribution", profile_name: profile, bundle_identifier: id)
     build_app(workspace: "ios/App/App.xcworkspace", scheme: "App", export_method: "app-store", output_directory: "build", output_name: "SOPCheck.ipa",
@@ -31,7 +31,7 @@ platform :ios do
     import_certificate(certificate_path: "/tmp/dist.p12", certificate_password: ENV["DIST_CERT_PASSWORD"], keychain_name: "fastlane_tmp_keychain", keychain_password: "")
     sigh(api_key: api_key, app_identifier: id, team_id: team, force: true, filename: "#{id}.mobileprovision")
     profile = lane_context[SharedValues::SIGH_NAME]
-    increment_build_number(xcodeproj: "ios/App/App.xcodeproj", build_number: (ENV["GITHUB_RUN_NUMBER"].to_i + 10).to_s  # +10: builds 1-4 were used by the old sopcheck-mobile repo)
+    increment_build_number(xcodeproj: "ios/App/App.xcodeproj", build_number: (ENV["GITHUB_RUN_NUMBER"].to_i + 10).to_s)  # +10: builds 1-4 were used by the old sopcheck-mobile repo
     update_code_signing_settings(use_automatic_signing: false, path: "ios/App/App.xcodeproj", targets: ["App"], team_id: team,
       code_sign_identity: "Apple Distribution", profile_name: profile, bundle_identifier: id)
     build_app(workspace: "ios/App/App.xcworkspace", scheme: "App", export_method: "app-store",
