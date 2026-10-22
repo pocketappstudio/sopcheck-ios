@@ -20,9 +20,6 @@ jobs:
     needs: simulator-build
     runs-on: macos-15
     steps:
-      - name: Select Xcode 26
-        run: |
-          X=$(ls -d /Applications/Xcode_26*.app | sort -V | tail -1); sudo xcode-select -s "$X/Contents/Developer"; xcodebuild -version
       - uses: actions/checkout@v4
       - uses: maxim-lobanov/setup-xcode@v1
         with:
@@ -45,9 +42,6 @@ jobs:
     needs: simulator-build
     runs-on: macos-15
     steps:
-      - name: Select Xcode 26
-        run: |
-          X=$(ls -d /Applications/Xcode_26*.app | sort -V | tail -1); sudo xcode-select -s "$X/Contents/Developer"; xcodebuild -version
       - uses: actions/checkout@v4
       - uses: maxim-lobanov/setup-xcode@v1
         with:
